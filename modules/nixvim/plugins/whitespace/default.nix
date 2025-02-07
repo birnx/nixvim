@@ -27,8 +27,8 @@ in
         highlight = 'DiffDelete',
 
         ignored_filetypes = {
-          'Avante',
-          'AvanteInput',
+          -- 'Avante',
+          -- 'AvanteInput',
           'TelescopePrompt',
           'Trouble',
           'blink-cmp-documentation',

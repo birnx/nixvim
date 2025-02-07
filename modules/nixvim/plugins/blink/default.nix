@@ -131,64 +131,65 @@
                 "calc"
                 "zsh"
               ]
-              ++ lib.optionals config.plugins.avante.enable [
-                "avante_commands"
-                "avante_files"
-                "avante_mentions"
-              ];
-            providers =
-              {
-                # BUILT-IN SOURCES
-                lsp.score_offset = 4;
-                # Community sources
-                copilot = {
-                  name = "copilot";
-                  module = "blink-copilot";
-                  async = true;
-                  score_offset = 100;
-                };
-                dictionary = {
-                  name = "Dict";
-                  module = "blink-cmp-dictionary";
-                  min_keyword_length = 3;
-                };
-                emoji = {
-                  name = "Emoji";
-                  module = "blink-emoji";
-                  score_offset = 1;
-                };
-                git = {
-                  name = "Git";
-                  module = "blink-cmp-git";
-                  enabled = true;
-                  score_offset = 100;
-                  should_show_items.__raw = ''
-                    function()
-                      return vim.o.filetype == 'gitcommit' or vim.o.filetype == 'markdown'
-                    end
-                  '';
-                  opts = {
-                    git_centers = {
-                      github = {
-                        issue = {
-                          on_error.__raw = "function(_,_) return true end";
+              ++
+                # lib.optionals config.plugins.avante.enable [
+                #   "avante_commands"
+                #   "avante_files"
+                #   "avante_mentions"
+                # ];
+                # providers =
+                {
+                  # BUILT-IN SOURCES
+                  lsp.score_offset = 4;
+                  # Community sources
+                  copilot = {
+                    name = "copilot";
+                    module = "blink-copilot";
+                    async = true;
+                    score_offset = 100;
+                  };
+                  dictionary = {
+                    name = "Dict";
+                    module = "blink-cmp-dictionary";
+                    min_keyword_length = 3;
+                  };
+                  emoji = {
+                    name = "Emoji";
+                    module = "blink-emoji";
+                    score_offset = 1;
+                  };
+                  git = {
+                    name = "Git";
+                    module = "blink-cmp-git";
+                    enabled = true;
+                    score_offset = 100;
+                    should_show_items.__raw = ''
+                      function()
+                        return vim.o.filetype == 'gitcommit' or vim.o.filetype == 'markdown'
+                      end
+                    '';
+                    opts = {
+                      git_centers = {
+                        github = {
+                          issue = {
+                            on_error.__raw = "function(_,_) return true end";
+                          };
                         };
                       };
                     };
                   };
-                };
-                ripgrep = {
-                  name = "Ripgrep";
-                  module = "blink-ripgrep";
-                  async = true;
-                  score_offset = 1;
-                };
-                spell = {
-                  name = "Spell";
-                  module = "blink-cmp-spell";
-                  score_offset = 1;
-                };
-              }
+                  ripgrep = {
+                    name = "Ripgrep";
+                    module = "blink-ripgrep";
+                    async = true;
+                    score_offset = 1;
+                  };
+                  spell = {
+                    name = "Spell";
+                    module = "blink-cmp-spell";
+                    score_offset = 1;
+                  };
+                }
               // lib.optionalAttrs config.plugins.blink-compat.enable {
                 # Cmp sources
                 calc = {
@@ -206,24 +207,24 @@
                   module = "blink.compat.source";
                   score_offset = -3;
                 };
-              }
-              // lib.optionalAttrs (config.plugins.avante.enable && config.plugins.blink-compat.enable) {
-                avante_commands = {
-                  name = "avante_commands";
-                  module = "blink.compat.source";
-                  score_offset = 90;
-                };
-                avante_files = {
-                  name = "avante_files";
-                  module = "blink.compat.source";
-                  score_offset = 100;
-                };
-                avante_mentions = {
-                  name = "avante_mentions";
-                  module = "blink.compat.source";
-                  score_offset = 1000;
-                };
               };
+            # // lib.optionalAttrs (config.plugins.avante.enable && config.plugins.blink-compat.enable) {
+            #   avante_commands = {
+            #     name = "avante_commands";
+            #     module = "blink.compat.source";
+            #     score_offset = 90;
+            #   };
+            #   avante_files = {
+            #     name = "avante_files";
+            #     module = "blink.compat.source";
+            #     score_offset = 100;
+            #   };
+            #   avante_mentions = {
+            #     name = "avante_mentions";
+            #     module = "blink.compat.source";
+            #     score_offset = 1000;
+            #   };
+            # };
           };
         };
       };

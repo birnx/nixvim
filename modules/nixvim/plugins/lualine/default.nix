@@ -24,8 +24,8 @@ in
           __unkeyed-2 = "neo-tree";
           __unkeyed-3 = "copilot-chat";
           __unkeyed-4 = "ministarter";
-          __unkeyed-5 = "Avante";
-          __unkeyed-6 = "AvanteInput";
+          # __unkeyed-5 = "Avante";
+          # __unkeyed-6 = "AvanteInput";
           __unkeyed-7 = "trouble";
           __unkeyed-8 = "dapui_scopes";
           __unkeyed-9 = "dapui_breakpoints";
