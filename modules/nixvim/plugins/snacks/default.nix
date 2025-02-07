@@ -24,7 +24,7 @@
 
       settings = {
         indent.enabled = true;
-        scroll.enabled = true;
+        # scroll.enabled = true;
         statuscolumn = {
           enabled = true;
 
