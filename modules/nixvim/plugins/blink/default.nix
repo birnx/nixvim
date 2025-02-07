@@ -131,7 +131,6 @@
                 "calc"
                 "zsh"
               ]
-              ++
                 # lib.optionals config.plugins.avante.enable [
                 #   "avante_commands"
                 #   "avante_files"

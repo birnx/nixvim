@@ -1,4 +1,4 @@
- {
+{
   inputs,
   lib,
   nix-update-script,
@@ -83,5 +83,4 @@ vimUtils.buildVimPlugin {
       aarnphm
     ];
   };
-  }
-;
+}
