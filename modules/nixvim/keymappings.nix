@@ -50,13 +50,13 @@
               };
 
               # navigate to left/right window
-              "<leader>[" = {
+              "<C-h>" = {
                 action = "<C-w>h";
                 options = {
                   desc = "Left window";
                 };
               };
-              "<leader>]" = {
+              "<C-l>" = {
                 action = "<C-w>l";
                 options = {
                   desc = "Right window";
@@ -364,12 +364,12 @@
             "<C-k>" = {
               action = "<C-o>gk";
             };
-            "<C-h>" = {
-              action = "<Left>";
-            };
-            "<C-l>" = {
-              action = "<Right>";
-            };
+            # "<C-h>" = {
+            # action = "<Left>";
+            # };
+            # "<C-l>" = {
+            # action = "<Right>";
+            # };
             "<C-j>" = {
               action = "<C-o>gj";
             };
