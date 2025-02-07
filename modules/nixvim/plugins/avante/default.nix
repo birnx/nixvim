@@ -8,7 +8,7 @@
 {
   plugins = {
     avante = {
-      enable = true;
+      enable = false;
       package = self.packages.${system}.avante-nvim;
       # package = pkgs.vimPlugins.avante-nvim.overrideAttrs {
       #   patches = [
