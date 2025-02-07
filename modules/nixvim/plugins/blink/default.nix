@@ -1,5 +1,4 @@
-{
-  config,
+{  config,
   inputs,
   lib,
   pkgs,
@@ -130,7 +129,7 @@
                 # TODO: migrate when available
                 "calc"
                 "zsh"
-              ]
+              ];
                 # lib.optionals config.plugins.avante.enable [
                 #   "avante_commands"
                 #   "avante_files"
@@ -226,7 +225,6 @@
             # };
           };
         };
-      };
 
       blink-cmp-copilot.enable = !config.plugins.blink-copilot.enable;
       blink-cmp-dictionary.enable = true;
@@ -247,6 +245,7 @@
         };
       };
     }
+
     (lib.mkIf config.plugins.blink-cmp.enable {
       cmp-calc.enable = true;
       cmp-zsh.enable = true;
@@ -255,6 +254,6 @@
         ''
           capabilities = require('blink.cmp').get_lsp_capabilities(capabilities)
         '';
-    })
-  ];
+   })];
 }
+
